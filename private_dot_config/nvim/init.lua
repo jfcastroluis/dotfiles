@@ -4,4 +4,4 @@ require('mappings')
 
 require('plugins')
 
-require('terraform')
+--require('terraform')
