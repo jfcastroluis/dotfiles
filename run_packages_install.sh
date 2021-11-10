@@ -6,9 +6,7 @@ sudo apt install htop \
                  pandoc \
                  pwgen \
                  ranger \
-                 texlive \
                  tldr \
                  tree \
                  virtualenvwrapper \
-                 vlc \
                  whois
