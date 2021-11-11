@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
 
-sudo apt install htop \
-                 imagemagick \
-                 jq \
-                 pandoc \
-                 pwgen \
-                 ranger \
-                 tldr \
-                 tree \
-                 virtualenvwrapper \
-                 whois
+sudo apt update
+
+sudo apt install -y htop \
+                    imagemagick \
+                    jq \
+                    pandoc \
+                    pwgen \
+                    ranger \
+                    tldr \
+                    tree \
+                    virtualenvwrapper \
+                    whois
 
 {{ if (eq .type "desktop") -}}
-sudo apt install texlive \
-                 vlc
+sudo apt install -y texlive \
+                    vlc
 {{ end -}}
