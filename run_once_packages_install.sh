@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 sudo apt install htop \
                  imagemagick \
@@ -10,3 +10,8 @@ sudo apt install htop \
                  tree \
                  virtualenvwrapper \
                  whois
+
+{{ if (eq .chezmoi.type "desktop") }}
+sudo apt install texlive \
+                 vlc
+{{ end }}
