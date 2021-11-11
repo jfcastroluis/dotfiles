@@ -11,7 +11,7 @@ sudo apt install htop \
                  virtualenvwrapper \
                  whois
 
-{{ if (eq .chezmoi.type "desktop") }}
+{{ if (eq .chezmoi.type "desktop") -}}
 sudo apt install texlive \
                  vlc
-{{ end }}
+{{ end -}}
