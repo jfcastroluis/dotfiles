@@ -9,11 +9,11 @@ sudo apt install -y htop \
                     pwgen \
                     ranger \
                     tldr \
+		    texlive \
                     tree \
                     virtualenvwrapper \
                     whois
 
-{{ if (eq .type "desktop") -}}
-sudo apt install -y texlive \
-                    vlc
+{{ if .gui -}}
+sudo apt install -y vlc
 {{ end -}}
