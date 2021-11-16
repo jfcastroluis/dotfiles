@@ -4,7 +4,6 @@
 
 env:
   TERM: xterm-256color
-
 window:
   padding:
     x: 5
@@ -24,4 +23,12 @@ font:
     style: Bold Italic
   size: 10.0
 draw_bold_text_with_bright_colors: true
+#shell:
+# program: /bin/bash
+#  args:
+#   - -l
+#    - -c
+#    - "tmux attach || tmux"
+#    - "tmux attach -t `tmux list-sessions 2>/dev/null | rofi -dmenu | cut -d: -f1` || tmux"
+#    - "tmux attach -t `tmux list-sessions 2>/dev/null | fzf | cut -d: -f1` || tmux"
 {{- end -}}
