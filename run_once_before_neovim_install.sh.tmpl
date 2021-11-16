@@ -1,0 +1,17 @@
+{{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "pop") (eq .chezmoi.osRelease.versionID "21.10")) -}}
+#!/bin/sh
+
+NEOVIM_VERSION=`curl -s https://api.github.com/repos/neovim/neovim/releases/latest | jq -r .tag_name | awk '{print substr($1, 2)}'`
+
+curl -sL "https://github.com/neovim/neovim/releases/download/${NEOVIM_VERSION}/nvim.appimage" -o /tmp/nvim.appimage
+sudo install /tmp/nvim.appimage /usr/local/bin/neovim-${NEOVIM_VERSION}
+rm /tmp/nvim.appimage
+sudo ln -sf /usr/local/bin/neovim-${NEOVIM_VERSION} /usr/local/bin/neovim
+
+unset NEOVIM_VERSION
+
+# Python support
+pip3 install pynvim
+
+exit 0
+{{ end -}}
