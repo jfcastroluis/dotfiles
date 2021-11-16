@@ -1,3 +1,3 @@
-{{ $type := promptString "type" }}
+{{ $gui := promptString "gui (yes/no)" | lower }}
 [data]
-	type = "{{ $type }}"
+	gui = "{{ (or (eq $gui "yes") (eq $gui "y" )) }}"
