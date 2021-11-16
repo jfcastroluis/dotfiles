@@ -1,7 +1,7 @@
 {{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "pop") (eq .chezmoi.osRelease.versionID "21.10") (.gui)) -}}
 #!/bin/sh
 
-sudo apt install alacritty
+sudo apt install -y alacritty 
 
 exit 0
 {{ end -}}
